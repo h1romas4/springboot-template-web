@@ -1,6 +1,6 @@
 # springboot-template-web
 
-## VS Code setting
+## VS Code settings
 
 ```
 {
@@ -13,6 +13,10 @@
 * Language Support for Java(TM) by Red Hat
 * ESLint
 * EditorConfig for Visual Studio Code
+
+![vscode-java](./assets/vscode/vscode-java.png)
+
+![vscode-js](./assets/vscode/vscode-js.png)
 
 ## Windows
 
