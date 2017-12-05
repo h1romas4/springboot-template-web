@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+    id 'eclipse'
+    id 'com.moowork.node' version '1.2.0'
+    id 'org.springframework.boot' version '1.5.9.RELEASE'
+}
+
+eclipse {
+    classpath {
+        defaultOutputDir = file('build/classes/java/main')
+    }
+}
+
+node {
+    version = '8.9.1'
+    download = true
+}
+
+task watch(dependsOn: ['npm_run_watch'])
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+def defaultEncoding = 'UTF-8'
+[compileJava, compileTestJava]*.options*.encoding = defaultEncoding
+
+bootRun {
+    addResources = true
+}
+
+ext['thymeleaf.version'] = '3.0.2.RELEASE'
+ext['thymeleaf-layout-dialect.version'] = '2.1.1'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.thymeleaf:thymeleaf-spring4')
+    compile("org.springframework.boot:spring-boot-devtools")
+}

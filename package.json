@@ -1,0 +1,22 @@
+{
+    "name": "springboot-template-web",
+    "version": "1.0.0",
+    "description": "springboot-template-web",
+    "repository": {},
+    "license": "Apache-2.0",
+    "devDependencies": {
+        "webpack": "^3.8.1",
+        "babel-loader": "^7.1.2",
+        "babel-core": "^6.26.0",
+        "babel-preset-env": "^1.6.1",
+        "eslint": "^4.12.1"
+    },
+    "dependencies": {
+        "vue": "^2.5.8",
+        "axios": "^0.17.1"
+    },
+    "scripts": {
+        "webpack": "webpack",
+        "watch": "webpack --watch"
+    }
+}

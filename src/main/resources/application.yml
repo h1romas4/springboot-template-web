@@ -1,0 +1,12 @@
+spring:
+    thymeleaf:
+        mode: HTML
+server:
+    contextPath: /
+    compression:
+        enabled: true
+        mime-types:
+            - text/css
+            - text/html
+            - application/javascript
+            - application/json
