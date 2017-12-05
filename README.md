@@ -50,22 +50,22 @@ http://localhost:8080/
 ```
 git clone https://github.com/h1romas4/springboot-template-web.git
 cd springboot-template-web
-.\gradlew build
-.\gradlew eclipse
-.\gradlew webpack
+./gradlew build
+./gradlew eclipse
+./gradlew webpack
 code .
 ```
 
 In VS Code internal terminal (Spring Boot development)
 
 ```
-.\gradlew bootRun
+./gradlew bootRun
 ```
 
 In VS Code another internal terminal (JavaScript Webpack development)
 
 ```
-.\gradlew watch
+./gradlew watch
 ```
 
 Enjoy! (Support for automatic application restarts)
