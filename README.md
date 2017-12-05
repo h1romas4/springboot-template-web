@@ -21,8 +21,8 @@ Open cmd.exe or PowerShell
 ```
 git clone https://github.com/h1romas4/springboot-template-web.git
 cd springboot-template-web
-.\gradew.bat eclipse
-.\gradew.bat webpack
+.\gradle.bat eclipse
+.\gradle.bat webpack
 code .
 ```
 
@@ -49,8 +49,8 @@ http://localhost:8080/
 ```
 git clone https://github.com/h1romas4/springboot-template-web.git
 cd springboot-template-web
-.\gradew eclipse
-.\gradew webpack
+.\gradle eclipse
+.\gradle webpack
 code .
 ```
 
