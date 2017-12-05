@@ -1,7 +1,5 @@
 # springboot-template-web
 
-## VS Code Playground
-
 ## VS Code setting
 
 ```
@@ -16,7 +14,7 @@
 * ESLint
 * EditorConfig for Visual Studio Code
 
-### Windows
+## Windows
 
 Open cmd.exe or PowerShell
 
@@ -46,7 +44,7 @@ Enjoy! (Support for automatic application restarts)
 http://localhost:8080/
 ```
 
-### macOS / Linux
+## macOS / Linux
 
 ```
 git clone https://github.com/h1romas4/springboot-template-web.git
@@ -73,4 +71,3 @@ Enjoy! (Support for automatic application restarts)
 ```
 http://localhost:8080/
 ```
-
