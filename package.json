@@ -9,7 +9,8 @@
         "babel-loader": "^7.1.2",
         "babel-core": "^6.26.0",
         "babel-preset-env": "^1.6.1",
-        "eslint": "^4.12.1"
+        "eslint": "^4.12.1",
+        "htmlhint": "^0.9.13"
     },
     "dependencies": {
         "vue": "^2.5.8",
