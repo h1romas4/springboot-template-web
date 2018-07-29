@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
+    mode: 'development',
     entry: [
         './src/main/js/app.js'
     ],
@@ -10,11 +11,6 @@ module.exports = {
         path: path.join(__dirname, '/src/main/resources/static/js') // eslint-disable-line
     },
     devtool: 'source-map',
-    plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            sourceMap: true
-        })
-    ],
     module: {
         rules: [{
             test: /\.js$/,
