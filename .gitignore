@@ -12,5 +12,4 @@ bin/
 build/
 node_modules/
 .idea/
-.vscode/
 out/
