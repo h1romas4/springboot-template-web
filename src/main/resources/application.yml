@@ -1,6 +1,13 @@
 spring:
+    profiles:
+        active: devel
     thymeleaf:
         mode: HTML
+    messages:
+        basename: messages
+        encoding: UTF-8
+doma:
+    dialect: POSTGRES
 server:
     contextPath: /
     compression:
@@ -10,3 +17,36 @@ server:
             - text/html
             - application/javascript
             - application/json
+
+---
+spring:
+    profiles: devel
+    devtools:
+        restart:
+            enabled: true
+    datasource:
+        url: jdbc:h2:mem:example;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=TRUE;MODE=PostgreSQL
+        driverClassName: org.h2.Driver
+        username: sa
+        password:
+    h2:
+        console:
+            # see http://localhost:8080/h2-console
+            enabled: true
+server:
+    port: 8080
+setting:
+    siteUrl: http://localhost:8080/
+
+---
+spring:
+    profiles: production
+    datasource:
+        # see https://devcenter.heroku.com/articles/deploying-spring-boot-apps-to-heroku#connecting-to-a-database
+        # heroku config
+        url: "@see Procfile:--spring.datasouce.url"
+        driverClassName: org.postgresql.Driver
+doma:
+    exception-sql-log-type: NONE
+setting:
+    siteUrl: https://example.com/

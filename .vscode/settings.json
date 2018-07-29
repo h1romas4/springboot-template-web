@@ -1,3 +1,4 @@
 {
-    "java.jdt.ls.vmargs": "-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication -Dfile.encoding=UTF-8"
+    "java.jdt.ls.vmargs": "-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication -Dfile.encoding=UTF-8",
+    "java.configuration.updateBuildConfiguration": "interactive"
 }

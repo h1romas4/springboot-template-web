@@ -8,6 +8,7 @@
 .gradle/
 .settings/
 .apt/
+.apt_generated/
 bin/
 build/
 node_modules/
