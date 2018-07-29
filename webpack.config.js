@@ -1,27 +1,46 @@
+const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
     mode: 'development',
-    entry: [
-        './src/main/js/app.js'
-    ],
+    entry: {
+        vendor: ['vue', 'axios', 'jquery', 'bootstrap'],
+        home: './src/main/js/home.js'
+    },
     output: {
-        filename: 'bundle.js',
+        filename: '[name].bundle.js',
         path: path.join(__dirname, '/src/main/resources/static/js') // eslint-disable-line
     },
-    devtool: 'source-map',
-    module: {
-        rules: [{
-            test: /\.js$/,
-            exclude: /node_modules/,
-            use: [{
-                loader: 'babel-loader',
-                options: {
-                    presets: ['env']
-                }
-            }]
-        }]
+    optimization: {
+        splitChunks: {
+            name: 'vendor',
+            chunks: 'initial'
+        }
     },
+    devtool: 'source-map',
+    plugins: [
+        // for bootstrap jQuery plugin
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
+        })
+    ],
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: [{
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['env']
+                    }
+                }]
+            }
+        ]
+    },
+    // for production vue.js
+    // @see https://vuejs.org/guide/deployment.html
     resolve: {
         extensions: ['.js', '.vue'],
         modules: [
