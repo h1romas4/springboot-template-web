@@ -36,6 +36,10 @@ def defaultEncoding = 'UTF-8'
 processResources.destinationDir = compileJava.destinationDir
 compileJava.dependsOn processResources
 
+// for heroku
+task stage(dependsOn: ['webpack', 'clean', 'build'])
+build.mustRunAfter clean
+
 bootRun {
     sourceResources sourceSets.main
 }

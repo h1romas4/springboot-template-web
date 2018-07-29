@@ -25,6 +25,6 @@
     },
     "scripts": {
         "webpack": "webpack",
-        "watch": "webpack --watch"
+        "watch": "webpack --mode development --watch"
     }
 }

@@ -2,7 +2,6 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-    mode: 'development',
     entry: {
         vendor: ['vue', 'axios', 'jquery', 'bootstrap'],
         home: './src/main/js/home.js'
