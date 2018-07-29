@@ -8,6 +8,15 @@ plugins {
 eclipse {
     classpath {
         defaultOutputDir = file('build/classes/java/main')
+        // after Gradle 4.4
+        // https://github.com/gradle/gradle/issues/3825
+        file.whenMerged {
+            entries.each { source ->
+                if (source.kind == 'src' && source.toString().contains('output')) {
+                    source.output = 'build/classes/java/main'
+                }
+            }
+        }
     }
 }
 
