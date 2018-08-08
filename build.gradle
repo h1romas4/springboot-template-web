@@ -52,8 +52,9 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.springframework.boot:spring-boot-starter-thymeleaf')
     compile('org.seasar.doma.boot:doma-spring-boot-starter:1.1.1')
-    compile("org.springframework.boot:spring-boot-devtools")
+    compile('org.springframework.boot:spring-boot-devtools')
     runtime('org.flywaydb:flyway-core')
     runtime('com.h2database:h2:1.4.196')
     runtime('org.postgresql:postgresql:9.4-1201-jdbc4')
- }
+    annotationProcessor('org.seasar.doma.boot:doma-spring-boot-starter:1.1.1')
+}
