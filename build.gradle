@@ -29,8 +29,7 @@ task webpack(dependsOn: ['npm_run_webpack'])
 sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
 
-def defaultEncoding = 'UTF-8'
-[compileJava, compileTestJava]*.options*.encoding = defaultEncoding
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
 // for DOMA2
 processResources.destinationDir = compileJava.destinationDir
