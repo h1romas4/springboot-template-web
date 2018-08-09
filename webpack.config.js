@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
+    mode: 'production',
     entry: {
         vendor: ['vue', 'axios', 'jquery', 'bootstrap'],
         home: './src/main/js/home.js'
@@ -48,5 +49,9 @@ module.exports = {
         alias: {
             vue: 'vue/dist/vue.min.js'
         }
+    },
+    performance: {
+        maxAssetSize: 300000,
+        maxEntrypointSize: 300000
     }
 };
