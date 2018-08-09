@@ -5,6 +5,9 @@ import org.seasar.doma.GeneratedValue;
 import org.seasar.doma.GenerationType;
 import org.seasar.doma.Id;
 
+/**
+ * User
+ */
 @Entity
 public class User {
     @Id

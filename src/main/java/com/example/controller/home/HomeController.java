@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * HomeController
+ */
 @Controller
 class HomeController {
     protected static Logger logger = LoggerFactory.getLogger(HomeController.class);

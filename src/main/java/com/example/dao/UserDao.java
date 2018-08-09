@@ -9,6 +9,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.example.entity.User;
 
+/**
+ * UserDao
+ *
+ * @see src/resources/META-INF/com/example/dao/UserDao
+ */
 @ConfigAutowireable
 @Dao
 public interface UserDao {
