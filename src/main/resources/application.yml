@@ -3,6 +3,7 @@ spring:
         active: devel
     thymeleaf:
         mode: HTML
+        enable-spring-el-compiler: true
     messages:
         basename: messages
         encoding: UTF-8
