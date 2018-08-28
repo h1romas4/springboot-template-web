@@ -1,6 +1,7 @@
 package com.example.controller.home;
 
 import com.example.Setting;
+import com.example.entity.User;
 import com.example.service.UserService;
 import java.util.Locale;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ class HomeController {
     protected static Logger logger = LoggerFactory.getLogger(HomeController.class);
 
     @Autowired
-    private UserService user;
+    private UserService userService;
 
     @Autowired
     private MessageSource messageSource;
@@ -30,14 +31,24 @@ class HomeController {
     @GetMapping("/")
     String home(Model model) {
         // debug log sample
-        logger.debug("debug message");
+        logger.debug("@debug message");
+
         // see resources/message.properties
         model.addAttribute("message",
             messageSource.getMessage("hello.world", new String[] { "Spring", "Boot" }, Locale.JAPAN));
         // see resources/application.yml and com.example.Setting
         model.addAttribute("setting", setting.getsiteUrl());
-        // see resources/META-INF/com/emample/dao/ExampleDao/selectAll.sql
-        model.addAttribute("users", user.get());
+
+        // DB insert test
+        User user = new User();
+        user.name = "h1romas4";
+        user.attr = "hego";
+        userService.insert(user);
+        logger.debug("@inserted unique id:" + user.id);
+
+        // DB select test
+        model.addAttribute("users", userService.get());
+
         // see resources/static/templates/hello.html
         return "home";
     }

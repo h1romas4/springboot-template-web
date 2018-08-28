@@ -16,4 +16,8 @@ public class UserService {
     public List<User> get() {
         return userDao.selectAll();
     }
+
+    public int insert(User user) {
+        return userDao.insert(user);
+    }
 }

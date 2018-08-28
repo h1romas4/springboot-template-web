@@ -8,7 +8,7 @@ spring:
         basename: messages
         encoding: UTF-8
 doma:
-    dialect: POSTGRES
+    dialect: h2
 server:
     contextPath: /
     compression:
@@ -26,7 +26,7 @@ spring:
         restart:
             enabled: true
     datasource:
-        url: jdbc:h2:mem:example;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=TRUE;MODE=PostgreSQL
+        url: jdbc:h2:mem:example;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=TRUE
         driverClassName: org.h2.Driver
         username: sa
         password:
