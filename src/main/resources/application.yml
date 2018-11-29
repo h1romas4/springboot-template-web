@@ -2,7 +2,8 @@ spring:
     thymeleaf:
         mode: HTML
 server:
-    contextPath: /
+    servlet:
+        context-path: /
     compression:
         enabled: true
         mime-types:
