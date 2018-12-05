@@ -3,6 +3,7 @@
 	// for the documentation about the extensions.json format
 	"recommendations": [
         "vscjava.vscode-java-pack",
+        "vscjava.vscode-java-dependency",
         "pivotal.vscode-spring-boot",
         "dbaeumer.vscode-eslint",
         "mkaufman.HTMLHint",
