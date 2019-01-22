@@ -2,7 +2,7 @@ import Vue from 'vue';
 import axios from 'axios';
 
 new Vue({
-    el: '#vue-test',
+    el: '#vue-module',
     data: {
         items: []
     },
