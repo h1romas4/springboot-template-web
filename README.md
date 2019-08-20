@@ -2,12 +2,6 @@
 
 ## VS Code settings
 
-```
-{
-    "java.jdt.ls.vmargs": "-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication -Dfile.encoding=UTF-8"
-}
-```
-
 ### Extentions
 
 * Language Support for Java(TM) by Red Hat
@@ -18,7 +12,9 @@
 
 ![vscode-js](./assets/vscode/vscode-js.png)
 
-## Windows
+## Build and Boot
+
+### Windows
 
 Open cmd.exe or PowerShell
 
@@ -49,7 +45,7 @@ Enjoy! (Support for automatic application restarts)
 http://localhost:8080/
 ```
 
-## macOS / Linux
+### macOS / Linux
 
 ```
 git clone https://github.com/h1romas4/springboot-template-web.git
