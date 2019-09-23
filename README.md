@@ -14,6 +14,8 @@
 
 ## Build and Boot
 
+![](https://github.com/h1romas4/springboot-template-web/workflows/Java%20CI/badge.svg)
+
 ### Windows
 
 Open cmd.exe or PowerShell
