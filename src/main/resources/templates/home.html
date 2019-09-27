@@ -14,7 +14,10 @@
         <h1 th:text="${message}">Jumbotron heading</h1>
         <p th:text="#{getting.start}">スタート</p>
         <p th:text="${setting}">URL</p>
-        <p id="vue-module"><span v-for="item in items">{{item}} </span></p>
+        <div id="vue-module">
+            <p><span v-for="item in items">{{item}} </span></p>
+            <hello />
+        </div>
         <table class="table">
             <thead>
                 <tr>
@@ -30,8 +33,8 @@
             </tbody>
         </table>
     </div>
-    <script src="../static/js/home.bundle.js" th:src="@{/js/home.bundle.js}"></script>
     <script src="../static/js/vendor.bundle.js" th:src="@{/js/vendor.bundle.js}"></script>
+    <script src="../static/js/home.bundle.js" th:src="@{/js/home.bundle.js}"></script>
     <footer class="footer">
         <p>&copy; 2019 Company, Inc.</p>
     </footer>

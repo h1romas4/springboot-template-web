@@ -1,8 +1,12 @@
 import Vue from 'vue';
 import axios from 'axios';
+import hello from '../common/hello'
 
 new Vue({
     el: '#vue-module',
+    components: {
+        'hello': hello
+    },
     data: {
         items: []
     },

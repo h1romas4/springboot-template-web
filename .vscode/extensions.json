@@ -5,6 +5,7 @@
         "vscjava.vscode-java-pack",
         "vscjava.vscode-java-dependency",
         "pivotal.vscode-spring-boot",
+        "octref.vetur",
         "dbaeumer.vscode-eslint",
         "mkaufman.HTMLHint",
         "EditorConfig.EditorConfig"
