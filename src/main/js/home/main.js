@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import axios from 'axios';
-import hello from '../common/hello'
+import hello from '../components/hello'
 
 new Vue({
     el: '#vue-module',
