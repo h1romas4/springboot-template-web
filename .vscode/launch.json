@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "firefox",
+            "request": "launch",
+            "name": "Firefox (Webpack)",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}/src/main/js",
+            "pathMappings": [
+                {
+                    "url": "webpack:///src/main/js",
+                    "path": "${webRoot}/"
+                }
+            ]
+        }
+    ]
+}
