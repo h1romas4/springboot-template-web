@@ -4,7 +4,7 @@ const path = require('path');
 module.exports = {
     mode: 'production',
     entry: {
-        vendor: ['vue', 'axios', 'jquery', 'bootstrap'],
+        vendor: ['vue', 'axios', 'jquery', 'popper.js', 'bootstrap'],
         home: './src/main/js/home.js'
     },
     output: {
