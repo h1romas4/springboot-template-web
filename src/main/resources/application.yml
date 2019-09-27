@@ -10,7 +10,8 @@ spring:
 doma:
     dialect: h2
 server:
-    contextPath: /
+    servlet:
+        context-path: /
     compression:
         enabled: true
         mime-types:

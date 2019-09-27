@@ -26,18 +26,16 @@ module.exports = {
         })
     ],
     module: {
-        rules: [
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: [{
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['env']
-                    }
-                }]
-            }
-        ]
+        rules: [{
+            test: /\.js$/,
+            exclude: /node_modules/,
+            use: [{
+                loader: 'babel-loader',
+                options: {
+                    presets: ['@babel/preset-env']
+                }
+            }]
+        }]
     },
     // for production vue.js
     // @see https://vuejs.org/guide/deployment.html
