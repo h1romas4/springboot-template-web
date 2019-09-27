@@ -1,6 +1,6 @@
 package com.example.controller.home;
 
-import com.example.Setting;
+import com.example.config.Setting;
 import com.example.entity.base.User;
 import com.example.service.UserService;
 import java.util.Locale;

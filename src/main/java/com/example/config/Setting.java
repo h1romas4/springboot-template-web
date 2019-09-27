@@ -1,4 +1,4 @@
-package com.example;
+package com.example.config;
 
 import java.io.Serializable;
 
