@@ -1,7 +1,7 @@
 package com.example.controller.home;
 
 import com.example.Setting;
-import com.example.entity.User;
+import com.example.entity.base.User;
 import com.example.service.UserService;
 import java.util.Locale;
 import org.springframework.beans.factory.annotation.Autowired;

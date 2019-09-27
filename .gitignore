@@ -9,6 +9,7 @@
 .settings/
 .apt/
 .apt_generated/
+.sts4-cache/
 bin/
 build/
 node_modules/

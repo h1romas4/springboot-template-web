@@ -6,7 +6,7 @@ import org.seasar.doma.Insert;
 import org.seasar.doma.Select;
 import org.seasar.doma.boot.ConfigAutowireable;
 
-import com.example.entity.User;
+import com.example.entity.base.User;
 
 /**
  * UserDao

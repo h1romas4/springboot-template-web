@@ -5,7 +5,7 @@ buildscript {
         }
 	}
 	dependencies {
-        classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.1.6.RELEASE'
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.1.8.RELEASE'
         classpath "com.moowork.gradle:gradle-node-plugin:1.3.1"
 	}
 }
@@ -14,12 +14,11 @@ apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'com.moowork.node'
-apply plugin: 'eclipse'
 
-apply from:'ide-eclipse.gradle'
+apply from:'ide.gradle'
 
 node {
-    version = '10.16.0'
+    version = '10.16.3'
     download = true
 }
 
@@ -32,8 +31,21 @@ targetCompatibility = '1.8'
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
 // for DOMA2
-processResources.destinationDir = compileJava.destinationDir
-compileJava.dependsOn processResources
+task copyDomaResources(type: Sync)  {
+    from sourceSets.main.resources.srcDirs
+    into compileJava.destinationDir
+    include 'doma.compile.config'
+    include 'META-INF/**/*.sql'
+    include 'META-INF/**/*.script'
+}
+
+compileJava {
+    dependsOn copyDomaResources
+}
+
+compileTestJava {
+    options.compilerArgs = ['-proc:none']
+}
 
 // for heroku
 task stage(dependsOn: ['webpack', 'clean', 'build'])
@@ -48,12 +60,12 @@ repositories {
 }
 
 dependencies {
-    compile('org.springframework.boot:spring-boot-starter-web')
-    compile('org.springframework.boot:spring-boot-starter-thymeleaf')
-    compile('org.seasar.doma.boot:doma-spring-boot-starter:1.1.1')
-    compile('org.springframework.boot:spring-boot-devtools')
-    runtime('org.flywaydb:flyway-core')
-    runtime('com.h2database:h2:1.4.197')
-    runtime('org.postgresql:postgresql:9.4-1201-jdbc4')
-    annotationProcessor('org.seasar.doma.boot:doma-spring-boot-starter:1.1.1')
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.seasar.doma.boot:doma-spring-boot-starter:1.1.1'
+    implementation 'org.springframework.boot:spring-boot-devtools'
+    runtime 'org.flywaydb:flyway-core'
+    runtime 'com.h2database:h2:1.4.199'
+    runtime 'org.postgresql:postgresql:42.2.8'
+    annotationProcessor 'org.seasar.doma.boot:doma-spring-boot-starter:1.1.1'
 }
