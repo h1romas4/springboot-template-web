@@ -8,8 +8,11 @@
 export default {
     data: function() {
         return {
-            msg: 'Hello, Vue component world!'
+            msg: ''
         }
+    },
+    mounted: function() {
+        this.msg = 'Hello, Vue component world!';
     },
     computed: {
         visble: function() {
