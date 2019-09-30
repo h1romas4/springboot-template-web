@@ -6,8 +6,8 @@ module.exports = {
     mode: 'production',
     entry: {
         vendor: ['vue', 'axios', 'jquery', 'popper.js', 'bootstrap'],
-        home: './src/main/js/home/main.js',
-        signin: './src/main/js/signin/main.js',
+        home: './src/main/js/home.js',
+        signin: './src/main/js/signin.js',
     },
     output: {
         filename: '[name].bundle.js',
