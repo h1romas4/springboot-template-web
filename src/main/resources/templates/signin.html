@@ -1,0 +1,29 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <link href="/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+    <title>Example</title>
+</head>
+<body>
+<div class="container">
+    <h2>Login</h2>
+    <form class="form-signin" method="post" th:action="@{/signin}">
+        <div th:if="${param.error}" class="alert alert-danger">
+            <p>incollect username or password.</p>
+        </div>
+        <input type="text" class="form-control" name="userId" placeholder="ID" required="required" autofocus="autofocus"/>
+        <input type="password" class="form-control" name="password" placeholder="Password" required="required"/>
+        <button class="btn btn-lg btn-primary" type="submit">Signin</button>
+    </form>
+    <footer class="footer">
+        <p>&copy; 2019 Company, Inc.</p>
+    </footer>
+    <script src="/js/vendor.bundle.js" th:src="@{/js/vendor.bundle.js}"></script>
+    <script src="/js/signin.bundle.js" th:src="@{/js/signin.bundle.js}"></script>
+</div>
+</body>
+</html>

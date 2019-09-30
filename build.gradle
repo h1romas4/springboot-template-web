@@ -24,6 +24,7 @@ node {
 
 task watch(dependsOn: ['npm_run_watch'])
 task webpack(dependsOn: ['npm_run_webpack'])
+task start(dependsOn: ['npm_run_start'])
 
 sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
@@ -62,6 +63,7 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.seasar.doma.boot:doma-spring-boot-starter:1.1.1'
     implementation 'org.springframework.boot:spring-boot-devtools'
     runtime 'org.flywaydb:flyway-core'

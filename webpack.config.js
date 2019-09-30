@@ -6,11 +6,13 @@ module.exports = {
     mode: 'production',
     entry: {
         vendor: ['vue', 'axios', 'jquery', 'popper.js', 'bootstrap'],
-        home: './src/main/js/home/main.js'
+        home: './src/main/js/home/main.js',
+        signin: './src/main/js/signin/main.js',
     },
     output: {
         filename: '[name].bundle.js',
-        path: path.join(__dirname, '/src/main/resources/static/js') // eslint-disable-line
+        path: path.join(__dirname, '/src/main/resources/static/js'), // eslint-disable-line
+        publicPath: "/js/",
     },
     optimization: {
         splitChunks: {
@@ -59,5 +61,16 @@ module.exports = {
     performance: {
         maxAssetSize: 300000,
         maxEntrypointSize: 300000
+    },
+    devServer: {
+        inline: true,
+        contentBase: [
+            path.join(__dirname, '/src/main/resources/templates'), // eslint-disable-line
+            path.join(__dirname, '/src/main/resources/static'), // eslint-disable-line
+        ],
+        watchContentBase: true,
+        port: 9000,
+        open:true,
+        openPage:"home.html"
     }
 };
