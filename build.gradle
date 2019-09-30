@@ -15,23 +15,29 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'com.moowork.node'
 
-apply from:'ide.gradle'
+/**
+ * for JDK
+ */
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
+/**
+ * for node.js & webpack
+ */
 node {
     version = '10.16.3'
     download = true
 }
-
 task watch(dependsOn: ['npm_run_watch'])
 task webpack(dependsOn: ['npm_run_webpack'])
 task start(dependsOn: ['npm_run_start'])
 
-sourceCompatibility = '1.8'
-targetCompatibility = '1.8'
+/**
+ * for DOMA2
+ */
+apply from:'ide.gradle'
 
-[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
-
-// for DOMA2
 task copyDomaResources(type: Sync)  {
     from sourceSets.main.resources.srcDirs
     into compileJava.destinationDir
@@ -39,19 +45,22 @@ task copyDomaResources(type: Sync)  {
     include 'META-INF/**/*.sql'
     include 'META-INF/**/*.script'
 }
-
 compileJava {
     dependsOn copyDomaResources
 }
-
 compileTestJava {
     options.compilerArgs = ['-proc:none']
 }
 
-// for heroku
+/**
+ * for heroku deploy
+ */
 task stage(dependsOn: ['webpack', 'clean', 'build'])
 build.mustRunAfter clean
 
+/**
+ * for Spring Boot
+ */
 bootRun {
     sourceResources sourceSets.main
 }
