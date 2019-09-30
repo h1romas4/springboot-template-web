@@ -7,11 +7,13 @@ spring:
     messages:
         basename: messages
         encoding: UTF-8
-doma:
-    dialect: h2
+    mvc:
+        throw-exception-if-no-handler-found: true
 server:
     servlet:
         context-path: /
+    error:
+        path: /error
     compression:
         enabled: true
         mime-types:
@@ -36,6 +38,8 @@ spring:
             # see http://localhost:8080/h2-console
             #  JDBC URL: jdbc:h2:mem:example
             enabled: true
+doma:
+    dialect: h2
 server:
     port: 8080
 setting:
@@ -50,6 +54,7 @@ spring:
         url: "@see Procfile:--spring.datasouce.url"
         driverClassName: org.postgresql.Driver
 doma:
+    dialect: POSTGRES
     exception-sql-log-type: NONE
 setting:
     siteUrl: https://example.com/
