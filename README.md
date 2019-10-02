@@ -1,13 +1,13 @@
 # springboot-template-web
 
-## Build and Boot
-
 ![](https://github.com/h1romas4/springboot-template-web/workflows/Java%20CI/badge.svg)
 
-## Require
+## Build and Boot
 
-* Java 8 (or higher)
-* VSCode (optional recommend)
+### Require
+
+* Setup JDK 11
+* Install VSCode (optional recommend)
 
 ### Windows
 
