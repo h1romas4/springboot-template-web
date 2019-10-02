@@ -63,6 +63,8 @@ build.mustRunAfter clean
  */
 bootRun {
     sourceResources sourceSets.main
+    // remote debug support @see .vscode/launch.json
+    jvmArgs=["-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=7778"]
 }
 
 repositories {
