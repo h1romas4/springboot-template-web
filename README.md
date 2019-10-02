@@ -1,20 +1,13 @@
 # springboot-template-web
 
-## VS Code settings
-
-### Extentions
-
-* Language Support for Java(TM) by Red Hat
-* ESLint
-* EditorConfig for Visual Studio Code
-
-![vscode-java](./assets/vscode/vscode-java.png)
-
-![vscode-js](./assets/vscode/vscode-js.png)
-
 ## Build and Boot
 
 ![](https://github.com/h1romas4/springboot-template-web/workflows/Java%20CI/badge.svg)
+
+## Require
+
+* Java 8 (or higher)
+* VSCode (optional recommend)
 
 ### Windows
 
