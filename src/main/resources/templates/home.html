@@ -1,47 +1,47 @@
 <!doctype html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragment/header::header('Home')">
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
-    <link href="/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
-    <title>Example</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+  <link href="/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+  <title>Example</title>
 </head>
 <body>
-<div class="container">
+  <div class="container">
     <div class="jumbotron">
-        <h1 th:text="${message}">Jumbotron heading</h1>
-        <p th:text="#{getting.start}" class="lead">スタート</p>
-        <hr />
-        <div class="mx-auto">
-            <p th:text="${setting}">URL</p>
-            <div id="vue-module">
-                <p><span v-for="item in items">{{item}} </span></p>
-                <hello />
-            </div>
+      <h1 th:text="${message}">Jumbotron heading</h1>
+      <p th:text="#{getting.start}" class="lead">スタート</p>
+      <hr />
+      <div class="mx-auto">
+        <p th:text="${setting}">URL</p>
+        <div id="vue-module">
+          <p><span v-for="item in items">{{item}} </span></p>
+          <hello />
         </div>
+      </div>
     </div>
     <table class="table">
-        <thead>
-            <tr>
-                <td>名前</td>
-                <td>属性</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="user: ${users}">
-                <td th:text="${user.name}">名前</td>
-                <td th:text="${user.attr}">属性</td>
-            </tr>
-        </tbody>
+      <thead>
+        <tr>
+          <td>名前</td>
+          <td>属性</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="user: ${users}">
+          <td th:text="${user.name}">名前</td>
+          <td th:text="${user.attr}">属性</td>
+        </tr>
+      </tbody>
     </table>
     <footer class="footer">
-        <hr />
-        <p>&copy; 2019 Company, Inc.</p>
+      <hr />
+      <p>&copy; 2019 Company, Inc.</p>
     </footer>
     <script src="/js/vendor.bundle.js" th:src="@{/js/vendor.bundle.js}"></script>
     <script src="/js/home.bundle.js" th:src="@{/js/home.bundle.js}"></script>
-</div>
+  </div>
 </body>
 </html>
