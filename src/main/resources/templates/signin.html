@@ -9,19 +9,23 @@
     <title>Example</title>
 </head>
 <body>
-<div class="container">
-    <h2>Login</h2>
-    <form class="form-signin" method="post" th:action="@{/signin}">
-        <div th:if="${param.error}" class="alert alert-danger">
-            <p>incollect username or password.</p>
+<div class="container p-5">
+    <div class="card border-secondary">
+        <h2 class="card-header text-center">Sign in</h2>
+        <div class="card-body">
+            <form class="p-4" method="post" th:action="@{/signin/process}">
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" name="userId" class="form-control" id="email" placeholder="email@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
         </div>
-        <input type="text" class="form-control" name="userId" placeholder="ID" required="required" autofocus="autofocus"/>
-        <input type="password" class="form-control" name="password" placeholder="Password" required="required"/>
-        <button class="btn btn-lg btn-primary" type="submit">Signin</button>
-    </form>
-    <footer class="footer">
-        <p>&copy; 2019 Company, Inc.</p>
-    </footer>
+    </div>
     <script src="/js/vendor.bundle.js" th:src="@{/js/vendor.bundle.js}"></script>
     <script src="/js/signin.bundle.js" th:src="@{/js/signin.bundle.js}"></script>
 </div>

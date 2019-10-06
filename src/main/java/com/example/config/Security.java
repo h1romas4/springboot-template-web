@@ -22,10 +22,10 @@ public class Security extends WebSecurityConfigurerAdapter {
           .antMatchers("/admin/**").hasRole("ADMIN")
           .anyRequest().permitAll();
       http.formLogin()
-          .loginProcessingUrl("/login")
+          .loginProcessingUrl("/signin/process")
           .loginPage("/signin")
           .failureUrl("/signin?error")
-          .defaultSuccessUrl("/", true)
+          .defaultSuccessUrl("/admin/dashboard", true)
           .usernameParameter("userId")
           .passwordParameter("password");
       http.logout()
