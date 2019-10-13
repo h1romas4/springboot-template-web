@@ -1,7 +1,7 @@
 select
     name,
-    attr
+    role
 from
     m_user
 order by
-    id desc
+    user_id desc

@@ -1,8 +1,9 @@
 CREATE TABLE m_user (
-    id      SERIAL,
-    name    varchar(40)     default NULL,
-    attr    varchar(100)    default NULL,
-    created timestamp       default current_timestamp,
-    updated timestamp       default current_timestamp,
-    PRIMARY KEY (id)
+    user_id     SERIAL,
+    email       VARCHAR(512)    NOT NULL,
+    name        VARCHAR(512)    NOT NULL,
+    role        VARCHAR(20)     NOT NULL,
+    password    VARCHAR(60)     NOT NULL,
+    PRIMARY KEY (user_id),
+    UNIQUE (email)
 )

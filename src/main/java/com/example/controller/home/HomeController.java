@@ -41,10 +41,12 @@ class HomeController {
 
         // DB insert test
         User user = new User();
+        user.email = "h1romas4@example.com";
         user.name = "h1romas4";
-        user.attr = "hego";
+        user.role = "USER";
+        user.password = "password";
         userService.insert(user);
-        logger.debug("@inserted unique id:" + user.id);
+        logger.debug("@inserted unique id:" + user.userId);
 
         // DB select test
         model.addAttribute("users", userService.get());

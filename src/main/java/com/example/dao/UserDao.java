@@ -19,6 +19,9 @@ public interface UserDao {
     @Select
     List<User> selectAll();
 
+    @Select
+    User selectByEmail(String email);
+
     @Insert
     int insert(User example);
 }
