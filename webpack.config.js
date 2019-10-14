@@ -8,6 +8,7 @@ module.exports = {
         vendor: ['vue', 'axios', 'jquery', 'popper.js', 'bootstrap'],
         home: './src/main/js/home.js',
         signin: './src/main/js/signin.js',
+        dashboard: './src/main/js/dashboard.js',
     },
     output: {
         filename: '[name].bundle.js',
