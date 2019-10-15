@@ -18,7 +18,7 @@ class SigninService implements UserDetailsService {
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         User user = userDao.selectByEmail(email);
         if (user == null) {
-            throw new UsernameNotFoundException("User or password invalid.");
+            throw new UsernameNotFoundException("username not found exception");
         }
 
         LoginInfo loginInfo = new LoginInfo();
