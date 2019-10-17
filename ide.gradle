@@ -1,3 +1,6 @@
+/**
+ * for Eclipse and Visual Studio Code
+ */
 apply plugin: 'eclipse'
 
 ext { aptDir='.apt_generated' }
