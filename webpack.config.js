@@ -71,7 +71,7 @@ module.exports = {
         ],
         watchContentBase: true,
         port: 9000,
-        open:true,
-        openPage:"home.html"
+        open: true,
+        openPage: "home.html"
     }
 };
