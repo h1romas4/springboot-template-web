@@ -8,10 +8,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 class DashboardController {
-    protected static Logger logger = LoggerFactory.getLogger(DashboardController.class);
+    private final static Logger logger = LoggerFactory.getLogger(DashboardController.class);
 
     @GetMapping("/admin/dashboard")
     String home(Model model) {
+        logger.debug("@DashboardController");
+
         return "dashboard";
     }
 }
