@@ -1,7 +1,5 @@
 package com.example.config;
 
-import java.io.Serializable;
-
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
@@ -10,8 +8,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @see src/resources/application.yml
  */
 @ConfigurationProperties(prefix = "setting")
-public class Setting implements Serializable {
-    private static final long serialVersionUID = 1L;
+public class Setting {
 
     private String siteUrl;
 
