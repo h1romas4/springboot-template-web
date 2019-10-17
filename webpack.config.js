@@ -21,7 +21,6 @@ module.exports = {
             chunks: 'initial'
         }
     },
-    devtool: 'source-map',
     plugins: [
         // for bootstrap jQuery plugin
         new webpack.ProvidePlugin({
@@ -48,8 +47,6 @@ module.exports = {
             }
         ]
     },
-    // for production vue.js
-    // @see https://vuejs.org/guide/deployment.html
     resolve: {
         extensions: ['.js', '.vue'],
         modules: [
@@ -62,16 +59,5 @@ module.exports = {
     performance: {
         maxAssetSize: 300000,
         maxEntrypointSize: 300000
-    },
-    devServer: {
-        inline: true,
-        contentBase: [
-            path.join(__dirname, '/src/main/resources/templates'), // eslint-disable-line
-            path.join(__dirname, '/src/main/resources/static'), // eslint-disable-line
-        ],
-        watchContentBase: true,
-        port: 9000,
-        open: true,
-        openPage: "home.html"
     }
 };
