@@ -14,11 +14,11 @@ public class Setting {
 
     private String siteUrl;
 
-    public String getsiteUrl() {
+    public String getSiteUrl() {
         return siteUrl;
     }
 
-    public void setsiteUrl(String siteUrl) {
+    public void setSiteUrl(String siteUrl) {
         this.siteUrl = siteUrl;
     }
 }

@@ -39,7 +39,7 @@ class HomeController {
             messageSource.getMessage("hello.world", new String[] { "Spring", "Boot" }, Locale.JAPAN));
 
         // see resources/application.yml and com.example.Setting
-        model.addAttribute("setting", setting.getsiteUrl());
+        model.addAttribute("setting", setting.getSiteUrl());
 
         // DB select test
         model.addAttribute("users", userService.get());
