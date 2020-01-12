@@ -80,7 +80,7 @@ dependencies {
     implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
     implementation 'org.seasar.doma.boot:doma-spring-boot-starter:1.2.1'
     implementation 'org.springframework.boot:spring-boot-devtools'
-    runtimeOnly 'org.flywaydb:flyway-core'
+    runtimeOnly 'org.flywaydb:flyway-core:6.1.4'
     runtimeOnly 'com.h2database:h2:1.4.200'
     runtimeOnly 'org.postgresql:postgresql:42.2.8'
     annotationProcessor 'org.seasar.doma.boot:doma-spring-boot-starter:1.2.1'
