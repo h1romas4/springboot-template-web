@@ -6,7 +6,7 @@ buildscript {
     }
     dependencies {
         classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.2.2.RELEASE'
-        classpath "com.github.node-gradle:gradle-node-plugin:2.2.0"
+        classpath "com.github.node-gradle:gradle-node-plugin:2.2.3"
     }
 }
 
@@ -26,7 +26,7 @@ targetCompatibility = '11'
  * for node.js & webpack
  */
 node {
-    version = '12.14.1'
+    version = '12.16.2'
     download = true
 }
 task watch(dependsOn: ['npm_run_watch'])
@@ -80,8 +80,8 @@ dependencies {
     implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
     implementation 'org.seasar.doma.boot:doma-spring-boot-starter:1.2.1'
     implementation 'org.springframework.boot:spring-boot-devtools'
-    runtimeOnly 'org.flywaydb:flyway-core:6.1.4'
+    runtimeOnly 'org.flywaydb:flyway-core:6.3.3'
     runtimeOnly 'com.h2database:h2:1.4.200'
-    runtimeOnly 'org.postgresql:postgresql:42.2.8'
+    runtimeOnly 'org.postgresql:postgresql:42.2.12'
     annotationProcessor 'org.seasar.doma.boot:doma-spring-boot-starter:1.2.1'
 }
