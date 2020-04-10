@@ -6,6 +6,7 @@
         "octref.vetur",
         "dbaeumer.vscode-eslint",
         "mkaufman.HTMLHint",
-        "EditorConfig.EditorConfig"
+        "EditorConfig.EditorConfig",
+        "firefox-devtools.vscode-firefox-debug"
     ]
 }
