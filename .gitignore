@@ -5,6 +5,7 @@
 *.iml
 *.ipr
 *.iws
+.idea/
 .gradle/
 .settings/
 .apt/
@@ -13,5 +14,5 @@
 bin/
 build/
 node_modules/
-.idea/
 out/
+src/main/resources/static/js/
