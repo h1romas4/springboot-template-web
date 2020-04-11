@@ -15,4 +15,4 @@ bin/
 build/
 node_modules/
 out/
-src/main/resources/static/js/
+src/main/resources/static/
