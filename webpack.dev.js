@@ -14,5 +14,10 @@ module.exports = merge(common, {
         port: 9000,
         open: true,
         openPage: "home.html"
-    }
+    },
+    resolve: {
+        alias: {
+            'vue$': 'vue/dist/vue.js'
+        }
+    },
 });
