@@ -61,7 +61,7 @@ module.exports = {
         loader: 'vue-loader'
       },
       {
-        test: /\.css$/,
+        test: /\.(sa|c)ss$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -69,7 +69,8 @@ module.exports = {
               publicPath: '/css',
             },
           },
-          "css-loader"
+          "css-loader",
+          "sass-loader"
         ]
       },
       {

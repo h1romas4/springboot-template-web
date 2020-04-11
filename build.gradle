@@ -71,6 +71,16 @@ bootRun {
     jvmArgs=["-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=7778"]
 }
 
+task cleanGen(type: Delete) {
+    delete fileTree('src/main/resources/static') {
+        include 'css/*.css'
+        include 'fonts/*.*'
+        include 'images/*.*'
+        include 'js/*.js'
+    }
+}
+clean.dependsOn cleanGen
+
 repositories {
     jcenter()
 }
