@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug Spring Boot (Attach)",
+            "request": "attach",
+            "hostName": "localhost",
+            "port": 7778
+        },
+        {
+            "type": "firefox",
+            "request": "launch",
+            "name": "Firefox (Webpack)",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}/src/main/js",
+            "pathMappings": [
+                {
+                    "url": "webpack:///src/main/js",
+                    "path": "${webRoot}/"
+                }
+            ]
+        }
+    ]
+}

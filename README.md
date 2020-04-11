@@ -1,20 +1,24 @@
 # springboot-template-web
 
-## VS Code settings
+![](https://github.com/h1romas4/springboot-template-web/workflows/Java%20CI/badge.svg)
 
-### Extentions
+## Try with Gitpod
 
-* Language Support for Java(TM) by Red Hat
-* ESLint
-* EditorConfig for Visual Studio Code
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://github.com/h1romas4/springboot-template-web)
 
-![vscode-java](./assets/vscode/vscode-java.png)
-
-![vscode-js](./assets/vscode/vscode-js.png)
+```
+# start Spring Boot
+.\gradlew.bat bootRun
+# start webpack watch
+.\gradlew.bat watch
+```
 
 ## Build and Boot
 
-![](https://github.com/h1romas4/springboot-template-web/workflows/Java%20CI/badge.svg)
+### Require
+
+* Setup JDK 11
+* Install VSCode (optional recommend)
 
 ### Windows
 
@@ -25,7 +29,6 @@ git clone https://github.com/h1romas4/springboot-template-web.git
 cd springboot-template-web
 .\gradlew.bat build
 .\gradlew.bat eclipse
-.\gradlew.bat webpack
 code .
 ```
 
@@ -54,7 +57,6 @@ git clone https://github.com/h1romas4/springboot-template-web.git
 cd springboot-template-web
 ./gradlew build
 ./gradlew eclipse
-./gradlew webpack
 code .
 ```
 

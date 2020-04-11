@@ -1,52 +1,74 @@
 buildscript {
-	repositories {
+    repositories {
         maven {
             url "https://plugins.gradle.org/m2/"
         }
-	}
-	dependencies {
-        classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.1.6.RELEASE'
-        classpath "com.moowork.gradle:gradle-node-plugin:1.3.1"
-	}
+    }
+    dependencies {
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.2.2.RELEASE'
+        classpath "com.github.node-gradle:gradle-node-plugin:2.2.3"
+    }
 }
 
 apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
-apply plugin: 'com.moowork.node'
-apply plugin: 'eclipse'
+apply plugin: 'com.github.node-gradle.node'
 
-eclipse {
-    classpath {
-        defaultOutputDir = file('build/classes/java/main')
-        // after Gradle 4.4
-        // https://github.com/gradle/gradle/issues/3825
-        file.whenMerged {
-            entries.each { source ->
-                if (source.kind == 'src' && source.toString().contains('output')) {
-                    source.output = 'build/classes/java/main'
-                }
-            }
-        }
-    }
-}
+/**
+ * for JDK
+ */
+sourceCompatibility = '11'
+targetCompatibility = '11'
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
+/**
+ * for node.js & webpack
+ */
 node {
-    version = '10.16.0'
+    version = '12.16.2'
     download = true
 }
-
 task watch(dependsOn: ['npm_run_watch'])
 task webpack(dependsOn: ['npm_run_webpack'])
+task start(dependsOn: ['npm_run_start'])
+build.dependsOn webpack
+bootRun.dependsOn webpack
 
-sourceCompatibility = '1.8'
-targetCompatibility = '1.8'
+/**
+ * for DOMA2
+ */
+apply from:'ide.gradle'
 
-def defaultEncoding = 'UTF-8'
-[compileJava, compileTestJava]*.options*.encoding = defaultEncoding
+task copyDomaResources(type: Sync)  {
+    from sourceSets.main.resources.srcDirs
+    into compileJava.destinationDir
+    include 'doma.compile.config'
+    include 'META-INF/**/*.sql'
+    include 'META-INF/**/*.script'
+}
+compileJava {
+    dependsOn copyDomaResources
+}
+compileTestJava {
+    options.compilerArgs = ['-proc:none']
+}
 
+/**
+ * for heroku deploy
+ */
+task stage(dependsOn: ['webpack', 'clean', 'build'])
+build.mustRunAfter clean
+
+/**
+ * for Spring Boot
+ */
 bootRun {
+    // for static resource reloading
+    //  https://docs.spring.io/spring-boot/docs/current/gradle-plugin/reference/html/#running-your-application-reloading-resources
     sourceResources sourceSets.main
+    // remote debug support @see .vscode/launch.json
+    jvmArgs=["-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=7778"]
 }
 
 repositories {
@@ -54,7 +76,14 @@ repositories {
 }
 
 dependencies {
-    compile('org.springframework.boot:spring-boot-starter-web')
-    compile('org.springframework.boot:spring-boot-starter-thymeleaf')
-    compile("org.springframework.boot:spring-boot-devtools")
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+    implementation 'org.seasar.doma.boot:doma-spring-boot-starter:1.2.1'
+    implementation 'org.springframework.boot:spring-boot-devtools'
+    runtimeOnly 'org.flywaydb:flyway-core:6.0.8'
+    runtimeOnly 'com.h2database:h2:1.4.200'
+    runtimeOnly 'org.postgresql:postgresql:42.2.12'
+    annotationProcessor 'org.seasar.doma.boot:doma-spring-boot-starter:1.2.1'
 }

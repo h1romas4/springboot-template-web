@@ -1,17 +1,46 @@
 <!doctype html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
-    <title>Hello World</title>
+<head th:replace="fragment/header::header('Home')">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="/css/vendor.bundle.css" rel="stylesheet" />
+  <title>Example</title>
 </head>
 <body>
-<div class="content">
-    <h1 th:text="${message}">Hello, World.</h1>
-    <p id="vue-module"><span v-for="item in items">{{item}} </span></p>
-</div>
-<script src="../static/js/bundle.js" th:src="@{/js/bundle.js}"></script>
+  <div class="container">
+    <div class="jumbotron">
+      <h1 th:text="${message}">Jumbotron heading</h1>
+      <p th:text="#{getting.start}" class="lead">スタート</p>
+      <hr />
+      <div class="mx-auto">
+        <p th:text="${setting}">URL</p>
+        <div id="vue-module">
+          <p><span v-for="item in items">{{item}} </span></p>
+          <hello />
+        </div>
+      </div>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <td>名前</td>
+          <td>属性</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="user: ${users}">
+          <td th:text="${user.name}">名前</td>
+          <td th:text="${user.role}">属性</td>
+        </tr>
+      </tbody>
+    </table>
+    <footer class="footer">
+      <hr />
+      <p>&copy; 2020 Company, Inc.</p>
+    </footer>
+    <script src="/js/vendor.bundle.js" th:src="@{/js/vendor.bundle.js}"></script>
+    <script src="/js/home.bundle.js" th:src="@{/js/home.bundle.js}"></script>
+  </div>
 </body>
 </html>

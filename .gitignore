@@ -5,11 +5,14 @@
 *.iml
 *.ipr
 *.iws
+.idea/
 .gradle/
 .settings/
 .apt/
+.apt_generated/
+.sts4-cache/
 bin/
 build/
 node_modules/
-.idea/
 out/
+src/main/resources/static/
