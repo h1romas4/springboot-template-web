@@ -25,8 +25,12 @@ module.exports = {
   },
   optimization: {
     splitChunks: {
-      name: 'vendor',
-      chunks: 'initial'
+      cacheGroups: {
+        vender: {
+          name: 'vendor',
+          chunks: 'initial'
+        }
+      }
     }
   },
   plugins: [
