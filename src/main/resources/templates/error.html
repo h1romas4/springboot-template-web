@@ -1,0 +1,33 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragment/header::header('Home', 'style.css')">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="/css/font/css/open-iconic-bootstrap.min.css" rel="stylesheet" />
+  <link href="/css/style.css" rel="stylesheet" />
+  <title>Example</title>
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>System Error</h1>
+      <hr />
+      <div th:text="'timestamp: ' + ${timestamp}"></div>
+      <div th:text="'status: ' + ${status}"></div>
+      <div th:text="'error: ' + ${error}"></div>
+      <div th:text="'exception: ' + ${exception}"></div>
+      <div th:text="'message: ' + ${message}"></div>
+      <div th:text="'errors: ' + ${errors}"></div>
+      <div th:text="'trace: ' + ${trace}"></div>
+      <div th:text="'path: ' + ${path}"></div>
+    </div>
+    <footer class="footer">
+      <hr />
+      <p>&copy; 2020 Company, Inc.</p>
+    </footer>
+    <script src="/js/vendor.bundle.js" th:src="@{/js/vendor.bundle.js}"></script>
+  </div>
+</body>
+</html>
