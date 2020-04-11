@@ -4,7 +4,7 @@
 
 ## Try with Gitpod
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://github.com/h1romas4/springboot-template-web)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io#https://github.com/h1romas4/springboot-template-web)
 
 ```
 # start Spring Boot
