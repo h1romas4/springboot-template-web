@@ -55,6 +55,19 @@ compileTestJava {
 }
 
 /**
+ * clean build
+ */
+task cleanGen(type: Delete) {
+    delete fileTree('src/main/resources/static') {
+        include 'css/*.css'
+        include 'fonts/*.*'
+        include 'images/*.*'
+        include 'js/*.js'
+    }
+}
+clean.dependsOn cleanGen
+
+/**
  * for heroku deploy
  */
 task stage(dependsOn: ['webpack', 'clean', 'build'])
@@ -70,16 +83,6 @@ bootRun {
     // remote debug support @see .vscode/launch.json
     jvmArgs=["-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=7778"]
 }
-
-task cleanGen(type: Delete) {
-    delete fileTree('src/main/resources/static') {
-        include 'css/*.css'
-        include 'fonts/*.*'
-        include 'images/*.*'
-        include 'js/*.js'
-    }
-}
-clean.dependsOn cleanGen
 
 repositories {
     jcenter()
