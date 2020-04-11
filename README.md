@@ -18,7 +18,6 @@ git clone https://github.com/h1romas4/springboot-template-web.git
 cd springboot-template-web
 .\gradlew.bat build
 .\gradlew.bat eclipse
-.\gradlew.bat webpack
 code .
 ```
 
@@ -47,7 +46,6 @@ git clone https://github.com/h1romas4/springboot-template-web.git
 cd springboot-template-web
 ./gradlew build
 ./gradlew eclipse
-./gradlew webpack
 code .
 ```
 
