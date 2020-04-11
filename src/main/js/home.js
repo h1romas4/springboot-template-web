@@ -15,9 +15,10 @@ new Vue({
         this.ajax();
     },
     methods: {
-        async ajax() {
-            let res = await axios.get('/vue');
-            this.items = res.data;
+        ajax: function() {
+            axios.get('/vue').then((res) => {
+                this.items = res.data;
+            });
         }
     }
 });
