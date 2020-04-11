@@ -1,6 +1,6 @@
 image: gitpod/workspace-full
 tasks:
-  - init: ./gradlew build && ./gradlew eclipse
+  - init: ./gradlew build
 vscode:
   extensions:
     - EditorConfig.EditorConfig@0.14.5:DTIJHHNrM36zsvYRBOY3ow==
