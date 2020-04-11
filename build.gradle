@@ -29,11 +29,10 @@ node {
     version = '12.16.2'
     download = true
 }
+
 task watch(dependsOn: ['npm_run_watch'])
 task webpack(dependsOn: ['npm_run_webpack'])
 task start(dependsOn: ['npm_run_start'])
-build.dependsOn webpack
-bootRun.dependsOn webpack
 
 /**
  * for DOMA2
@@ -47,9 +46,11 @@ task copyDomaResources(type: Sync)  {
     include 'META-INF/**/*.sql'
     include 'META-INF/**/*.script'
 }
+
 compileJava {
     dependsOn copyDomaResources
 }
+
 compileTestJava {
     options.compilerArgs = ['-proc:none']
 }
@@ -65,7 +66,10 @@ task cleanGen(type: Delete) {
         include 'js/*.js'
     }
 }
-clean.dependsOn cleanGen
+
+webpack.dependsOn cleanGen
+build.dependsOn webpack
+bootRun.dependsOn webpack
 
 /**
  * for heroku deploy
@@ -77,7 +81,7 @@ build.mustRunAfter clean
  * for Spring Boot
  */
 bootRun {
-    // for static resource reloading
+    // for static resource hot reloading
     //  https://docs.spring.io/spring-boot/docs/current/gradle-plugin/reference/html/#running-your-application-reloading-resources
     sourceResources sourceSets.main
     // remote debug support @see .vscode/launch.json
