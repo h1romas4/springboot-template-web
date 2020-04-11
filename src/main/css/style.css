@@ -2,6 +2,10 @@ body {
     padding: 16px;
 }
 
+.table {
+    background-image: url(images/150x150.png);
+}
+
 @media (min-width: 768px) {
     .container {
         max-width: 730px;

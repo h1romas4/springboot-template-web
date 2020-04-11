@@ -74,7 +74,8 @@ module.exports = {
           loader: 'file-loader',
           options: {
             name: "[name].[ext]",
-            outputPath: 'fonts/'
+            outputPath: 'fonts/',
+            publicPath: '/fonts'
           }
         }]
       },
@@ -84,7 +85,8 @@ module.exports = {
           loader: 'file-loader',
           options: {
             name: "[name].[ext]",
-            outputPath: 'images/'
+            outputPath: 'images/',
+            publicPath: '/images'
           }
         }]
       },
