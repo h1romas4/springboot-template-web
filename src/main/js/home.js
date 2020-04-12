@@ -16,7 +16,7 @@ new Vue({
     },
     methods: {
         ajax: function() {
-            axios.get('/vue').then((res) => {
+            axios.get('/api/v1/home').then((res) => {
                 this.items = res.data;
             });
         }

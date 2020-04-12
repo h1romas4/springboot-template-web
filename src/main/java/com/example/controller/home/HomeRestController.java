@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 class HomeRestController {
     private final static Logger logger = LoggerFactory.getLogger(HomeRestController.class);
 
-    @GetMapping("/vue")
+    @GetMapping("/api/v1/home")
     List<String> home(Model model) {
         logger.debug("@HomeRestController");
 
