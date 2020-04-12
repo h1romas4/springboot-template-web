@@ -10,10 +10,9 @@ module.exports = merge(common, {
           path.join(__dirname, '/src/main/resources/templates'), // eslint-disable-line
       ],
       before: function(app) {
-        app.use('/api', function (req, res, next) {
+        app.use('/api', function (req, res) {
           res.type('application/json')
           res.sendFile(path.join(__dirname, '/src/test/js/json', req.originalUrl + ".json")) // eslint-disable-line
-          next()
         })
       },
       watchContentBase: true,
