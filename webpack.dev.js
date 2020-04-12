@@ -20,4 +20,8 @@ module.exports = merge(common, {
             'vue$': 'vue/dist/vue.js'
         }
     },
-});
+    performance: {
+      hints: false
+    }
+  }
+);
