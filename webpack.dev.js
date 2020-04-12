@@ -17,7 +17,7 @@ module.exports = merge(common, {
         })
       },
       watchContentBase: true,
-      port: 9000,
+      port: 9080,
       open: true,
       openPage: "home.html"
     },
