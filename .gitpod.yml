@@ -4,3 +4,8 @@ tasks:
 vscode:
   extensions:
     - EditorConfig.EditorConfig@0.14.5:DTIJHHNrM36zsvYRBOY3ow==
+ports:
+    - port: 8080
+      onOpen: open-preview
+    - port: 7778
+      onOpen: ignore
