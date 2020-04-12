@@ -6,74 +6,51 @@
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io#https://github.com/h1romas4/springboot-template-web)
 
-```
-# start Spring Boot
-.\gradlew.bat bootRun
-# start webpack watch
-.\gradlew.bat watch
-```
-
 ## Build and Boot
 
 ### Require
 
-* Setup JDK 11
-* Install VSCode (optional recommend)
+* Setup JDK 11 and `JAVA_HOME` setting
+* Setup Node.js 12 (optional)
+* Install VSCode (optional)
 
-### Windows
-
-Open cmd.exe or PowerShell
-
-```
-git clone https://github.com/h1romas4/springboot-template-web.git
-cd springboot-template-web
-.\gradlew.bat build
-.\gradlew.bat eclipse
-code .
-```
-
-In VS Code internal terminal (Spring Boot development)
-
-```
-.\gradlew.bat bootRun
-```
-
-In VS Code another internal terminal (JavaScript Webpack development)
-
-```
-.\gradlew.bat watch
-```
-
-Enjoy! (Support for automatic application restarts)
-
-```
-http://localhost:8080/
-```
-
-### macOS / Linux
+### Initialize
 
 ```
 git clone https://github.com/h1romas4/springboot-template-web.git
 cd springboot-template-web
 ./gradlew build
 ./gradlew eclipse
+# start vscode in source code directory
 code .
 ```
 
-In VS Code internal terminal (Spring Boot development)
+### Develop
+
+Backend and Frondend Develop (with automatic reload)
 
 ```
+# start Spring Boot
 ./gradlew bootRun
-```
-
-In VS Code another internal terminal (JavaScript Webpack development)
-
-```
+# and start webpack watch (another terminal)
 ./gradlew watch
 ```
-
-Enjoy! (Support for automatic application restarts)
 
 ```
 http://localhost:8080/
 ```
+
+Only Frondend Develop (with automaic reload)
+
+```
+# use internal Node.js
+./gradlew server
+# or external Node.js
+npm run server
+```
+
+```
+http://localhost:9080/
+```
+
+Enjoy!
