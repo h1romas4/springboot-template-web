@@ -12,7 +12,7 @@
             "type": "firefox",
             "request": "launch",
             "name": "Firefox (Webpack)",
-            "url": "http://localhost:8080",
+            "url": "http://localhost:9080/home.html",
             "webRoot": "${workspaceFolder}/src/main/js",
             "pathMappings": [
                 {
