@@ -33,7 +33,7 @@ Backend and Frondend Develop (with automatic reload)
 # start Spring Boot
 ./gradlew bootRun
 # and start webpack watch (another terminal)
-./gradlew watch
+./gradlew --no-daemon watch
 ```
 
 ```
@@ -44,7 +44,7 @@ Only Frondend Develop (with automaic reload)
 
 ```
 # use internal Node.js
-./gradlew server
+./gradlew --no-daemon server
 # or external Node.js
 npm run server
 ```

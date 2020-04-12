@@ -14,9 +14,14 @@
             "command": "./gradlew bootRun"
         },
         {
-            "label": "Run Frontend Develop",
+            "label": "Run Frontend Develop (in Spring Boot)",
             "type": "shell",
-            "command": "./gradlew server"
+            "command": "./gradlew --no-daemon watch"
+        },
+        {
+            "label": "Run Frontend Develop (in Node.js)",
+            "type": "shell",
+            "command": "./gradlew --no-daemon server"
         },
     ]
 }
