@@ -21,9 +21,9 @@ module.exports = merge(common, {
     openPage: "home.html"
   },
   resolve: {
-      alias: {
-        'vue$': 'vue/dist/vue.js'
-      }
+    alias: {
+      'vue$': 'vue/dist/vue.js'
+    }
   },
   performance: {
     hints: false
