@@ -30,8 +30,9 @@ node {
     download = true
 }
 
-task watch(dependsOn: ['npm_run_watch'])
 task webpack(dependsOn: ['npm_run_webpack'])
+task debug(dependsOn: ['npm_run_debug'])
+task watch(dependsOn: ['npm_run_watch'])
 task server(dependsOn: ['npm_run_server'])
 
 /**
@@ -69,7 +70,7 @@ task cleanGen(type: Delete) {
 
 webpack.dependsOn cleanGen
 build.dependsOn webpack
-bootRun.dependsOn webpack
+bootRun.dependsOn debug
 
 /**
  * for heroku deploy

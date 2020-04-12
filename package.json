@@ -33,6 +33,7 @@
     },
     "scripts": {
         "webpack": "webpack",
+        "debug": "webpack --config webpack.dev.js",
         "watch": "webpack --config webpack.dev.js --watch",
         "server": "webpack-dev-server --config webpack.dev.js"
     }

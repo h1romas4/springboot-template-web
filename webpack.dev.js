@@ -8,7 +8,6 @@ module.exports = merge(common, {
       inline: true,
       contentBase: [
           path.join(__dirname, '/src/main/resources/templates'), // eslint-disable-line
-          path.join(__dirname, '/src/main/resources/static'), // eslint-disable-line
       ],
       before: function(app) {
         app.use('/api', function (req, res, next) {
