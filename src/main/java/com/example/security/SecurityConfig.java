@@ -18,22 +18,28 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-      http.authorizeRequests()
-          .antMatchers("/admin/**").hasRole("ADMIN")
-          .anyRequest().permitAll();
-      http.formLogin()
-          .loginProcessingUrl("/signin/process")
-          .loginPage("/signin")
-          .failureUrl("/signin?error")
-          .defaultSuccessUrl("/admin/dashboard", true)
-          .usernameParameter("userId")
-          .passwordParameter("password");
-      http.logout()
-          .logoutRequestMatcher(new AntPathRequestMatcher("signout"))
-          .logoutSuccessUrl("/signin")
-          .deleteCookies("JSESSIONID")
-          .invalidateHttpSession(true)
-          .permitAll();
+        // Force the use of HTTPS
+        // https://devcenter.heroku.com/articles/preparing-a-spring-boot-app-for-production-on-heroku#force-the-use-of-https
+        http.requiresChannel()
+            .requestMatchers(r -> r.getHeader("X-Forwarded-Proto") != null)
+            .requiresSecure();
+        // login authorize
+        http.authorizeRequests()
+            .antMatchers("/admin/**").hasRole("ADMIN")
+            .anyRequest().permitAll();
+        http.formLogin()
+            .loginProcessingUrl("/signin/process")
+            .loginPage("/signin")
+            .failureUrl("/signin?error")
+            .defaultSuccessUrl("/admin/dashboard", true)
+            .usernameParameter("userId")
+            .passwordParameter("password");
+        http.logout()
+            .logoutRequestMatcher(new AntPathRequestMatcher("signout"))
+            .logoutSuccessUrl("/signin")
+            .deleteCookies("JSESSIONID")
+            .invalidateHttpSession(true)
+            .permitAll();
     }
 
     @Bean
