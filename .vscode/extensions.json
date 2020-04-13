@@ -2,6 +2,7 @@
     "recommendations": [
         "vscjava.vscode-java-pack",
         "vscjava.vscode-java-dependency",
+        "naco-siren.gradle-language",
         "pivotal.vscode-spring-boot",
         "octref.vetur",
         "dbaeumer.vscode-eslint",
