@@ -12,6 +12,7 @@ module.exports = merge(common, {
     before: function(app) {
       app.use('/api', function (req, res) {
         res.type('application/json')
+        // Note: directory traversal
         res.sendFile(path.join(__dirname, '/src/test/js/json', req.originalUrl + ".json")) // eslint-disable-line
       })
     },
