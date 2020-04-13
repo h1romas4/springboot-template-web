@@ -67,7 +67,7 @@ bootRun.dependsOn debug
 /**
  * for heroku deploy
  */
-task stage(dependsOn: ['webpack', 'clean', 'build'])
+task stage(dependsOn: ['build'])
 build.mustRunAfter clean
 
 /**
