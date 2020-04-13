@@ -53,10 +53,10 @@ compileTestJava {
  */
 task cleanGen(type: Delete) {
     delete fileTree('src/main/resources/static') {
-        include 'css/*.css'
+        include 'css/*.*'
         include 'fonts/*.*'
         include 'images/*.*'
-        include 'js/*.js'
+        include 'js/*.*'
     }
 }
 
