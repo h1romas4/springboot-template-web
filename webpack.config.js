@@ -3,6 +3,9 @@ const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+/**
+ * @type {import('webpack').Configuration}
+ */
 module.exports = {
   mode: 'production',
   entry: {
