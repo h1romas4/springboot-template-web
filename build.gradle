@@ -60,15 +60,20 @@ task cleanGen(type: Delete) {
     }
 }
 
+// build order
 webpack.dependsOn cleanGen
+webpack.mustRunAfter cleanGen
 build.dependsOn webpack
+build.mustRunAfter webpack
 bootRun.dependsOn debug
+bootRun.mustRunAfter webpack
 
 /**
  * for heroku deploy
  */
-task stage(dependsOn: ['build'])
-build.mustRunAfter clean
+task stage(dependsOn: ['clean', 'build']) {
+    mustRunAfter 'clean'
+}
 
 /**
  * for Spring Boot
