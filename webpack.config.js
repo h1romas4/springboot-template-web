@@ -17,6 +17,9 @@ module.exports = {
       'bootstrap',
       './src/main/css/style.css'
     ],
+    // for css and resources
+    assets: './src/main/assets/import.js',
+    // entory js
     home: './src/main/js/home.js',
     signin: './src/main/js/signin.js',
     dashboard: './src/main/js/dashboard.js',
@@ -93,8 +96,8 @@ module.exports = {
           loader: 'file-loader',
           options: {
             name: "[name].[ext]",
-            outputPath: 'images/',
-            publicPath: '/images'
+            outputPath: 'img/',
+            publicPath: '/img'
           }
         }]
       },

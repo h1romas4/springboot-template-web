@@ -15,4 +15,7 @@ bin/
 build/
 node_modules/
 out/
-src/main/resources/static/
+src/main/resources/static/css
+src/main/resources/static/fonts
+src/main/resources/static/img
+src/main/resources/static/js

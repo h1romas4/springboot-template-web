@@ -3,7 +3,7 @@ body {
 }
 
 .table {
-    background-image: url(images/150x150.png);
+    background-image: url(../assets/img/150x150.png);
 }
 
 @media (min-width: 768px) {

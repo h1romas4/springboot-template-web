@@ -13,7 +13,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) {
-        web.ignoring().antMatchers("/css/**", "/image/**", "/js/**", "/fonts/**");
+        web.ignoring().antMatchers("/css/**", "/img/**", "/js/**", "/fonts/**");
     }
 
     @Override
