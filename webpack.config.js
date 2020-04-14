@@ -69,14 +69,27 @@ module.exports = {
       {
         test: /\.(sa|c)ss$/,
         use: [
+          // 3rd loader
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
               publicPath: '/css',
             },
           },
-          "css-loader",
-          "sass-loader"
+          // 2nd loader
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true
+            },
+          },
+          // 1st loader
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true
+            },
+          },
         ]
       },
       {
