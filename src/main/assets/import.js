@@ -6,4 +6,5 @@ import $ from 'jquery'; // eslint-disable-line
 // for common css
 import '../css/style.css';
 
-// image resources
+// image resources for HTML useing
+import './img/224x33.png'
