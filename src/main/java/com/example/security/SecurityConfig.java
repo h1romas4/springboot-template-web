@@ -20,9 +20,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         // Force the use of HTTPS
         // https://devcenter.heroku.com/articles/preparing-a-spring-boot-app-for-production-on-heroku#force-the-use-of-https
-        http.requiresChannel()
-            .requestMatchers(r -> r.getHeader("X-Forwarded-Proto") != null)
-            .requiresSecure();
+        // http.requiresChannel()
+        //     .requestMatchers(r -> r.getHeader("X-Forwarded-Proto") != null)
+        //     .requiresSecure();
         // login authorize
         http.authorizeRequests()
             .antMatchers("/admin/**").hasRole("ADMIN")
