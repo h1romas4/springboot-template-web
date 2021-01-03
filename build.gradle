@@ -1,6 +1,6 @@
 plugins {
-	id 'org.springframework.boot' version '2.2.6.RELEASE'
-    id "com.github.node-gradle.node" version "2.2.3"
+	id 'org.springframework.boot' version '2.4.1'
+    id "com.github.node-gradle.node" version "2.2.4"
 }
 
 apply plugin: 'java'
@@ -18,7 +18,7 @@ targetCompatibility = '11'
  * for node.js & webpack
  */
 node {
-    version = '12.16.2'
+    version = '12.20.0'
     download = true
 }
 
@@ -95,10 +95,10 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
-    implementation 'org.seasar.doma.boot:doma-spring-boot-starter:1.2.1'
+    implementation 'org.seasar.doma.boot:doma-spring-boot-starter:1.5.0'
     implementation 'org.springframework.boot:spring-boot-devtools'
-    runtimeOnly 'org.flywaydb:flyway-core:6.0.8'
+    runtimeOnly 'org.flywaydb:flyway-core:7.3.2'
     runtimeOnly 'com.h2database:h2:1.4.200'
     runtimeOnly 'org.postgresql:postgresql:42.2.12'
-    annotationProcessor 'org.seasar.doma.boot:doma-spring-boot-starter:1.2.1'
+    annotationProcessor 'org.seasar.doma:doma-processor:2.44.3'
 }
