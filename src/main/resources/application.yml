@@ -58,6 +58,8 @@ spring:
         # heroku config
         url: "@see Procfile:--spring.datasouce.url"
         driverClassName: org.postgresql.Driver
+    flyway:
+        locations: classpath:/db/migration
 doma:
     dialect: POSTGRES
     exception-sql-log-type: NONE
