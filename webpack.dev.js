@@ -13,6 +13,13 @@ module.exports = merge(common, {
     },
     watchFiles: ['src/main/js/**/*', 'src/main/css/**/*'],
     port: 9080,
+    onAfterSetupMiddleware: function (devServer) {
+      devServer.app.use('/api', function (req, res) {
+        res.type('application/json')
+        // Note: directory traversal
+        res.sendFile(path.join(__dirname, '/src/test/js/json', req.originalUrl + ".json")) // eslint-disable-line
+      })
+    },
   },
   resolve: {
     alias: {
