@@ -25,6 +25,7 @@ module.exports = {
     filename: 'js/[name].bundle.js',
     path: path.join(__dirname, '/src/main/resources/static'), // eslint-disable-line
     publicPath: "/",
+    assetModuleFilename: 'res/[hash][ext]'
   },
   optimization: {
     splitChunks: {
@@ -68,10 +69,7 @@ module.exports = {
         use: [
           // 3rd loader
           {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: '/css',
-            },
+            loader: MiniCssExtractPlugin.loader
           },
           // 2nd loader
           {
@@ -91,25 +89,11 @@ module.exports = {
       },
       {
         test: /\.(ttf|otf|eot|woff|woff2)$/,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: "[name].[ext]",
-            outputPath: 'fonts/',
-            publicPath: '/fonts'
-          }
-        }]
+        type: 'asset/resource'
       },
       {
         test: /\.(png|jpg|svg)$/,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: "[name].[ext]",
-            outputPath: 'images/',
-            publicPath: '/images'
-          }
-        }]
+        type: 'asset/resource'
       },
     ]
   },
