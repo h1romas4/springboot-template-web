@@ -8,8 +8,8 @@ import '../../css/style.css';
 /**
  * Disable multi submit.
  */
-$(document).ready(function () {
-    $("form").submit(function () {
+$(function() {
+    $("form").on('submit', function () {
         $(":submit", this).prop("disabled", true);
     });
 });
