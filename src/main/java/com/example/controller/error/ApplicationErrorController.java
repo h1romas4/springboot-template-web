@@ -18,14 +18,6 @@ import java.util.Map;
 @Controller
 @RequestMapping("${server.error.path:${error.path:/error}}")
 public class ApplicationErrorController implements ErrorController {
-    @Value("${server.error.path:${error.path:/error}}")
-    private String errorPath;
-
-    @Override
-    public String getErrorPath() {
-        return errorPath;
-    }
-
     /**
      * for html
      */
