@@ -11,7 +11,7 @@
 ### Require
 
 * Setup JDK 11 and `JAVA_HOME` setting
-* Setup Node.js 12 (optional)
+* Setup Node.js 16 (optional)
 * Install VSCode (optional)
 
 ### Initialize
