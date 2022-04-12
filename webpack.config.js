@@ -25,7 +25,7 @@ module.exports = {
     filename: 'js/[name].bundle.js',
     path: path.join(__dirname, '/src/main/resources/static'), // eslint-disable-line
     publicPath: "/",
-    assetModuleFilename: 'res/[hash][ext]'
+    assetModuleFilename: 'res/[name].[hash][ext]'
   },
   optimization: {
     splitChunks: {
