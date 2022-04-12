@@ -1,11 +1,13 @@
 plugins {
     id 'org.springframework.boot' version '2.6.6'
     id "com.github.node-gradle.node" version "3.2.1"
+    id "org.seasar.doma.compile" version "1.1.0"
 }
 
 apply plugin: 'java'
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'com.github.node-gradle.node'
+apply plugin: 'org.seasar.doma.compile'
 
 /**
  * for JDK
@@ -32,20 +34,16 @@ task server(dependsOn: ['npm_run_server'])
  */
 apply from:'ide.gradle'
 
-task copyDomaResources(type: Sync)  {
-    from sourceSets.main.resources.srcDirs
-    into compileJava.destinationDir
-    include 'doma.compile.config'
-    include 'META-INF/**/*.sql'
-    include 'META-INF/**/*.script'
-}
-
-compileJava {
-    dependsOn copyDomaResources
-}
-
 compileTestJava {
     options.compilerArgs = ['-proc:none']
+}
+
+bootJar {
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+}
+
+jar {
+    enabled = false
 }
 
 /**
