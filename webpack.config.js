@@ -30,7 +30,7 @@ module.exports = {
     splitChunks: {
       cacheGroups: {
         vender: {
-          name: 'vendor',
+          name: 'depens',
           chunks: 'initial'
         }
       }
