@@ -1,6 +1,6 @@
 plugins {
 	id 'org.springframework.boot' version '2.4.1'
-    id "com.github.node-gradle.node" version "2.2.4"
+    id "com.github.node-gradle.node" version "3.2.1"
 }
 
 apply plugin: 'java'
@@ -18,7 +18,7 @@ targetCompatibility = '11'
  * for node.js & webpack
  */
 node {
-    version = '12.20.0'
+    version = '16.14.2'
     download = true
 }
 
