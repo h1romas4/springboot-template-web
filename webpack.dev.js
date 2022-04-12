@@ -8,21 +8,11 @@ const common = require('./webpack.config.js');
 module.exports = merge(common, {
   devtool: 'source-map',
   devServer: {
-    inline: true,
-    contentBase: [
-        path.join(__dirname, '/src/main/resources/templates'), // eslint-disable-line
-    ],
-    before: function(app) {
-      app.use('/api', function (req, res) {
-        res.type('application/json')
-        // Note: directory traversal
-        res.sendFile(path.join(__dirname, '/src/test/js/json', req.originalUrl + ".json")) // eslint-disable-line
-      })
+    static: {
+        directory: path.join(__dirname, '/src/main/resources/templates'), // eslint-disable-line
     },
-    watchContentBase: true,
+    watchFiles: ['src/main/js/**/*', 'src/main/css/**/*'],
     port: 9080,
-    open: true,
-    openPage: "home.html"
   },
   resolve: {
     alias: {
