@@ -52,8 +52,7 @@ jar {
 task cleanGen(type: Delete) {
     delete fileTree('src/main/resources/static') {
         include 'css/*.*'
-        include 'fonts/*.*'
-        include 'images/*.*'
+        include 'res/*.*'
         include 'js/*.*'
     }
 }
