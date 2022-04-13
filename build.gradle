@@ -84,7 +84,7 @@ bootRun {
 }
 
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
 dependencies {
