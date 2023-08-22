@@ -15,37 +15,38 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @EnableMethodSecurity
 public class SecurityConfig {
     @Bean
-    protected SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         // Force the use of HTTPS
         // https://devcenter.heroku.com/articles/preparing-a-spring-boot-app-for-production-on-heroku#force-the-use-of-https
         // http.requiresChannel()
         //     .requestMatchers(r -> r.getHeader("X-Forwarded-Proto") != null)
         //     .requiresSecure();
         // login authorize
-        http.authorizeRequests()
+        http.authorizeRequests((authz) -> authz
             .requestMatchers("/css/**", "/image/**", "/js/**", "/fonts/**")
-            .permitAll();
-        http.authorizeRequests()
+            .permitAll());
+        http.authorizeRequests((authz) -> authz
             .requestMatchers("/admin/**").hasRole("ADMIN")
-            .anyRequest().permitAll();
-        http.formLogin()
+            .anyRequest()
+            .permitAll());
+        http.formLogin((authz) -> authz
             .loginProcessingUrl("/signin/process")
             .loginPage("/signin")
             .failureUrl("/signin?error")
             .defaultSuccessUrl("/admin/dashboard", true)
             .usernameParameter("userId")
-            .passwordParameter("password");
-        http.logout()
+            .passwordParameter("password"));
+        http.logout((authz) -> authz
             .logoutRequestMatcher(new AntPathRequestMatcher("signout"))
             .logoutSuccessUrl("/signin")
             .deleteCookies("JSESSIONID")
             .invalidateHttpSession(true)
-            .permitAll();
+            .permitAll());
         return http.build();
     }
 
     @Bean
-    PasswordEncoder passwordEncoder() {
+    public PasswordEncoder passwordEncoder() {
       return new BCryptPasswordEncoder();
     }
 }
