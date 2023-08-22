@@ -1,5 +1,5 @@
 plugins {
-    id 'org.springframework.boot' version '2.6.6'
+	id 'org.springframework.boot' version '2.7.14'
     id "com.github.node-gradle.node" version "3.2.1"
     id "org.seasar.doma.compile" version "1.1.0"
 }
@@ -92,10 +92,10 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
-    implementation 'org.seasar.doma.boot:doma-spring-boot-starter:1.6.0'
+    implementation 'org.seasar.doma.boot:doma-spring-boot-starter:1.7.0'
     implementation 'org.springframework.boot:spring-boot-devtools'
-    runtimeOnly 'org.flywaydb:flyway-core:8.5.7'
-    runtimeOnly 'com.h2database:h2:2.1.212'
-    runtimeOnly 'org.postgresql:postgresql:42.3.3'
-    annotationProcessor 'org.seasar.doma:doma-processor:2.50.0'
+    runtimeOnly 'org.flywaydb:flyway-core:9.21.1'
+    runtimeOnly 'com.h2database:h2:2.2.220'
+    runtimeOnly 'org.postgresql:postgresql:42.6.0'
+    annotationProcessor 'org.seasar.doma:doma-processor:2.53.1'
 }
