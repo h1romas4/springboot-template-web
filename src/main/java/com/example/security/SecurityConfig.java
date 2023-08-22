@@ -23,10 +23,10 @@ public class SecurityConfig {
         //     .requiresSecure();
         // login authorize
         http.authorizeRequests()
-            .antMatchers("/css/**", "/image/**", "/js/**", "/fonts/**")
+            .requestMatchers("/css/**", "/image/**", "/js/**", "/fonts/**")
             .permitAll();
         http.authorizeRequests()
-            .antMatchers("/admin/**").hasRole("ADMIN")
+            .requestMatchers("/admin/**").hasRole("ADMIN")
             .anyRequest().permitAll();
         http.formLogin()
             .loginProcessingUrl("/signin/process")
