@@ -22,16 +22,16 @@
         "webpack-dev-server": "^4.8.1",
         "webpack-merge": "^5.8.0",
         "vue-loader": "^15.9.8",
-        "vue-template-compiler": "^2.6.14"
+        "vue-template-compiler": "^2.7.14"
     },
     "dependencies": {
-        "@babel/runtime": "^7.17.9",
-        "axios": "^0.26.1",
-        "bootstrap": "^4.6.1",
-        "jquery": "^3.6.0",
+        "@babel/runtime": "^7.22.10",
+        "axios": "^1.4.0",
+        "bootstrap": "^4.6.2",
+        "jquery": "^3.7.0",
         "open-iconic": "^1.1.1",
         "popper.js": "^1.16.1",
-        "vue": "^2.6.14"
+        "vue": "^2.7.14"
     },
     "scripts": {
         "webpack": "webpack",
