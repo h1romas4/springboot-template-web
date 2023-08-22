@@ -1,29 +1,30 @@
 package com.example.security;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
+@Configuration
 @EnableWebSecurity
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
-    @Override
-    public void configure(WebSecurity web) {
-        web.ignoring().antMatchers("/css/**", "/image/**", "/js/**", "/fonts/**");
-    }
-
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
+@EnableMethodSecurity
+public class SecurityConfig {
+    @Bean
+    protected SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         // Force the use of HTTPS
         // https://devcenter.heroku.com/articles/preparing-a-spring-boot-app-for-production-on-heroku#force-the-use-of-https
         // http.requiresChannel()
         //     .requestMatchers(r -> r.getHeader("X-Forwarded-Proto") != null)
         //     .requiresSecure();
         // login authorize
+        http.authorizeRequests()
+            .antMatchers("/css/**", "/image/**", "/js/**", "/fonts/**")
+            .permitAll();
         http.authorizeRequests()
             .antMatchers("/admin/**").hasRole("ADMIN")
             .anyRequest().permitAll();
@@ -40,6 +41,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .deleteCookies("JSESSIONID")
             .invalidateHttpSession(true)
             .permitAll();
+        return http.build();
     }
 
     @Bean
